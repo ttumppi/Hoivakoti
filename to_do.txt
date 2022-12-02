@@ -1,0 +1,6 @@
+- uus tietokanta djangoon TEHTY
+- käyttäjä: työntekijä, näkee hallinnoimansa sopimukset
+- näkymät:
+	sopimus_id - tilaaja - osoite - asukkaat - palvelut
+- täyttölomake: työntekijä täyttää
+	tilaaja - osoite - asukkaat - palvelut per asukas
