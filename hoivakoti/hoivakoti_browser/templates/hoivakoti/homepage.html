@@ -1,9 +1,18 @@
-<a href="{% url 'hoivakoti:homepage' %}">|Homepage|</a>
-<a href="{% url 'hoivakoti:asukkaat' %}">|Asukkaat|</a>
-<a href="{% url 'hoivakoti:sopimus' %}">|Sopimukset|</a>
-<a href="{% url 'hoivakoti:tilaajat' %}">|Tilaajat|</a>
-<a href="{% url 'hoivakoti:palvelut' %}">|Palvelut|</a>
-<a href="{% url 'hoivakoti:tyontekijat' %}">|Tyontekijat|</a> 
+<p>
+    <a href="{% url 'hoivakoti:homepage' %}">|Homepage|</a>
+    <a href="{% url 'hoivakoti:asukkaat' %}">|Asukkaat|</a>
+    <a href="{% url 'hoivakoti:sopimus' %}">|Sopimukset|</a>
+    <a href="{% url 'hoivakoti:tilaajat' %}">|Tilaajat|</a>
+    <a href="{% url 'hoivakoti:palvelut' %}">|Palvelut|</a>
+    <a href="{% url 'hoivakoti:tyontekijat' %}">|Tyontekijat|</a> 
+    {% if user.is_authenticated %}
+    Hello, {{ user.username }}.
+    <a href="{% url 'users:logout' %}">Log out</a>
+    {% else %}
+    <a href="{% url 'users:register' %}">Register</a> -
+    <a href="{% url 'users:login' %}">Log in</a>
+</p>
+{% endif %}
 {% block content %} 
 <p>kotisivu</p>
 {% endblock content %}
