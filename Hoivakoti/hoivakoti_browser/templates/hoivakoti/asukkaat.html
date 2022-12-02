@@ -1,0 +1,13 @@
+{% extends "hoivakoti/homepage.html" %}
+{% block content %} 
+<p>Asukkaat</p>
+
+<ul>
+    {# tulostetaan jokainen asukas sivulle #}
+    {% for asukas in asukkaat %}
+        <li>{{ asukas }}</li>
+    {% empty %} 
+        <li>No topics have been added yet.</li>
+    {% endfor %} 
+</ul>
+{% endblock content %} 

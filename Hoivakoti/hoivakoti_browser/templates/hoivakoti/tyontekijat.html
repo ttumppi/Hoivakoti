@@ -1,0 +1,10 @@
+{% extends "hoivakoti/homepage.html" %} 
+{% block content %}
+<ul>
+    {% for tyontekija in tyontekijat %}
+        <li> {{ tyontekija }}</li>
+    {% empty %}
+        <p>Ei tyontekijoita</p>
+    {% endfor %}
+</ul>
+{% endblock content %}
