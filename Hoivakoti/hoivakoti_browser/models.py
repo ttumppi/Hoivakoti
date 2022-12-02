@@ -14,7 +14,6 @@ class Asukkaat(models.Model):
     osoite = models.ForeignKey('Osoite', models.DO_NOTHING)
 
     class Meta:
-        managed = False
         db_table = 'asukkaat'
 
 
@@ -23,7 +22,6 @@ class Osoite(models.Model):
     osoite = models.CharField(max_length=30)
 
     class Meta:
-        managed = False
         db_table = 'osoite'
 
 
@@ -33,7 +31,6 @@ class Palvelukori(models.Model):
     plv = models.ForeignKey('Palvelut', models.DO_NOTHING)
 
     class Meta:
-        managed = False
         db_table = 'palvelukori'
 
 
@@ -42,7 +39,6 @@ class Palvelut(models.Model):
     plv_nimi = models.CharField(max_length=30)
 
     class Meta:
-        managed = False
         db_table = 'palvelut'
 
 
@@ -53,7 +49,6 @@ class Sopimus(models.Model):
     plv_vastaava = models.ForeignKey('Tyontekijat', models.DO_NOTHING)
 
     class Meta:
-        managed = False
         db_table = 'sopimus'
 
 
@@ -62,7 +57,6 @@ class Tilaaja(models.Model):
     nimi = models.CharField(max_length=40)
 
     class Meta:
-        managed = False
         db_table = 'tilaaja'
     def __str__(self):
         return self.nimi
@@ -73,5 +67,4 @@ class Tyontekijat(models.Model):
     nimi = models.CharField(max_length=40)
 
     class Meta:
-        managed = False
         db_table = 'tyontekijat'

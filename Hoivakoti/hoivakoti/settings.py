@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #MyApps
     'hoivakoti_browser',
+    'users',
     #baseApps
     'django.contrib.admin',
     'django.contrib.auth',
