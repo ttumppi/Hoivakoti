@@ -1,0 +1,9 @@
+{% extends "hoivakoti/homepage.html" %}
+{% block content %}
+<form action="{% url 'hoivakoti:open_osoite' osoite_id %}" method="post">
+    {% csrf_token %}
+    {{ asukasform.as_p}}
+    <button name="submit">Lisaa asiakas</button>
+</form>
+
+{% endblock content %}

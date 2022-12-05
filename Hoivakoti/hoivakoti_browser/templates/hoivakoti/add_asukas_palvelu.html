@@ -1,0 +1,16 @@
+{% extends "hoivakoti/homepage.html" %}
+{% block content %}
+<ul>
+    <form action="{% url 'hoivakoti:add_asukas_palvelu' asukas.id %}" method="post">
+        {% csrf_token %}
+        <select name="palvelu_select">
+            {% for palvelu in palvelut %}
+                <option> {{ palvelu.plv_nimi }} </option>
+            {% empty %}
+                <option> <p>Ei palveluita</p></option>
+            {% endfor %}
+        </select>
+        <button name="submit">Lisää</button>
+</ul>
+
+{% endblock content %} 

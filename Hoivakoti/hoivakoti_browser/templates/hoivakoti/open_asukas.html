@@ -1,0 +1,9 @@
+{% extends "hoivakoti/homepage.html" %}
+{% block content %}
+{% for palvelu in palvelut %} 
+    <li>{{ palvelu.plv }}</li>
+{% empty %}
+    <p>Ei palveluita</p>
+{% endfor %}
+<a href="{% url 'hoivakoti:add_asukas_palvelu' asukas.id %}">Lisää palvelu</a>
+{% endblock content %}

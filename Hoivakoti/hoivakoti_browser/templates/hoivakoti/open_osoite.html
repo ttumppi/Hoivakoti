@@ -1,0 +1,12 @@
+{% extends "hoivakoti/homepage.html" %}
+{% block content %}
+<ul>
+    <p>Asukkaat:</p>
+{% for asukas in asukkaat %}
+    <li><a href="{% url 'hoivakoti:open_asukas' asukas.id %}"> {{ asukas.nimi }} </a></li>
+{% empty %}
+    <p>Ei asukkaita</p>
+{% endfor %}
+</ul>
+<a href="{% url 'hoivakoti:add_asukas' osoite_id %}"><p>Lisää Asukas</p></a>
+{% endblock content %}

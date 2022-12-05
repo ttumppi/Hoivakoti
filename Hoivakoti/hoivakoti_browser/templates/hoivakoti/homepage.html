@@ -8,6 +8,7 @@
     {% if user.is_authenticated %}
     Hello, {{ user.username }}.
     <a href="{% url 'users:logout' %}">Log out</a>
+    <a href="{% url 'hoivakoti:add_sopimus' %}">Add sopimus</a>
     {% else %}
     <a href="{% url 'users:register' %}">Register</a> -
     <a href="{% url 'users:login' %}">Log in</a>

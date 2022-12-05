@@ -1,0 +1,10 @@
+{% extends "hoivakoti/homepage.html" %}
+{% block content %}
+<form action="{% url 'hoivakoti:add_sopimus' %}" method='post'>
+    {% csrf_token %}
+    {{ osoite.as_p }}
+    {{ tilaaja.as_p }}
+    {{ tyontekijat.as_p }}
+    <button name="submit">Add Sopimus</button>
+</form>
+{% endblock content %}

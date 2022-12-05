@@ -18,7 +18,7 @@ class Asukkaat(models.Model):
 
 
 class Osoite(models.Model):
-    id = models.OneToOneField('Sopimus', models.DO_NOTHING, db_column='Id', primary_key=True)  # Field name made lowercase.
+    sopimus = models.OneToOneField('Sopimus', models.DO_NOTHING, db_column='Id', primary_key=True)  # Field name made lowercase.
     osoite = models.CharField(max_length=30)
 
     class Meta:
@@ -40,16 +40,18 @@ class Palvelut(models.Model):
 
     class Meta:
         db_table = 'palvelut'
+    def __str__(self):
+        return self.plv_nimi
 
 
 class Sopimus(models.Model):
     id = models.AutoField(db_column='Id', primary_key=True)  # Field name made lowercase.
-    osoite_id = models.IntegerField()
     tilaaja = models.ForeignKey('Tilaaja', models.DO_NOTHING)
     plv_vastaava = models.ForeignKey('Tyontekijat', models.DO_NOTHING)
 
     class Meta:
         db_table = 'sopimus'
+
 
 
 class Tilaaja(models.Model):

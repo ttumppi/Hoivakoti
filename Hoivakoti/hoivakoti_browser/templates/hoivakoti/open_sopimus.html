@@ -2,10 +2,9 @@
 {% block content %} 
 <ul>
     
-    <li><p> Osoite: {{osoite }} </p> </li>
-    <li><p> Tilaaja:  {{ tilaaja }} </p> </li>
-    <li><p> Asujat:  {{ asujat }} </p> </li>
-    <li><p> Palveluvastaava:  {{ plv_vastaava }} </p> </li>
+    <li><p> Osoite:</p><a href="{% url 'hoivakoti:open_osoite' osoite.pk %}"> {{ osoite.osoite }} </a> </li>
+    <li><p> Tilaaja: {{ tilaaja.nimi }} </p> </li>
+    <li><p> Palveluvastaava: {{ plv_vastaava.nimi }} </p> </li>
     
 </ul>
 {% endblock content %} 
